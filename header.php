@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<header id="header" class="header roboto<?php if (is_singular('product')) { echo ' products'; } else if (is_front_page()) { echo ' home'; } ?>">
+	<header id="header" class="header">
 		<div class="header__hammenu -sp">
 			<?php
 				the_custom_logo();
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<nav class="header__nav -pc<?php if (!is_front_page()) { echo ' -hasLogo'; } ?>">
+		<nav class="header__nav -pc">
 			<?php
 				the_custom_logo();
 			?>
