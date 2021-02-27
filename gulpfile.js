@@ -4,7 +4,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
 const rename   = require("gulp-rename");
-const packageImporter = require('node-sass-package-importer');
+sass.compiler = require('sass');
 
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
