@@ -192,3 +192,19 @@ function official_pagination()
         'total' => $wp_query->max_num_pages
     ));
 }
+
+// minifyされたCSSがあればそちらを読む
+if (! is_admin()) {
+    function min_style($style_uri, $style_dir_uri)
+    {
+        $style = str_replace(trailingslashit($style_dir_uri), '', $style_uri);
+        $style = str_replace('.css', '.min.css', $style);
+
+        if (file_exists(trailingslashit(STYLESHEETPATH) . $style)) {
+            $style_uri = trailingslashit($style_dir_uri) . $style;
+        }
+
+        return $style_uri;
+    }
+    add_filter('stylesheet_uri', 'min_style', 10, 2);
+}
