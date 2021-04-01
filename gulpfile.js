@@ -9,6 +9,9 @@ const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 
+const cleanCSS = require("gulp-clean-css");
+const rename = require("gulp-rename");
+
 gulp.task("imagemin", function () {
     return gulp
         .src('./assets/images/**')
@@ -30,16 +33,19 @@ gulp.task("imagemin", function () {
 
 gulp.task("watch-scss", function() {
     return gulp.watch(
-        "./assets/scss/*.scss",
+        "./assets/scss/**/*.scss",
         function() {
             // style.scssの更新があった場合の処理
             return (
                 gulp
-                    .src("./assets/scss/*.scss")
+                    .src("./assets/scss/**/*.scss")
                     // Sassのコンパイルを実行
                     .pipe(sass.sync().on('error', sass.logError))
+                    .pipe(cleanCSS())
+                    .pipe(rename({
+                        extname: '.min.css'
+                    }))
                     .pipe(gulp.dest('./'))
-                    // cssフォルダー以下に保存
             );
         })
 })
