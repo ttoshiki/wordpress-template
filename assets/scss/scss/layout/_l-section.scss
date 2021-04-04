@@ -1,0 +1,7 @@
+@use "variables";
+
+.l-section {
+  max-width: variables.$content-width-xl;
+  padding: 0 48px;
+  margin: 108px auto 0;
+}

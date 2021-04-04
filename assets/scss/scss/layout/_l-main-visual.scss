@@ -1,0 +1,11 @@
+@use "variables";
+
+.l-main-visual {
+  position: relative;
+
+  &__headingImg {
+    position: absolute;
+    top: 38%;
+    left: 14%;
+  }
+}

@@ -1,0 +1,9 @@
+@use "variables";
+
+.l-footer {
+  &-copyright {
+    margin: 24px 0 12px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}

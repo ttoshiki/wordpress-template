@@ -1,0 +1,247 @@
+@use "variables";
+
+.l-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  font-variant-ligatures: no-common-ligatures;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    height: 70px;
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      font-size: 17px;
+
+      a {
+        color: variables.$white;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .menu-item {
+      margin: 0 24px;
+      letter-spacing: 4px;
+    }
+
+    .menu-primary-container {
+      flex-grow: 0.6;
+    }
+  }
+
+  &.-fixed {
+    position: fixed;
+    background-color: variables.$white;
+    box-shadow: 0px 0px 6.32px 1.68px rgba(0, 0, 0, 0.21);
+
+    .custom-logo-link {
+      max-width: 168px;
+      filter: brightness(0);
+    }
+
+    .l-header {
+      &__nav {
+        .menu a {
+          color: variables.$black;
+        }
+      }
+    }
+  }
+}
+
+.fixedMenu {
+  position: fixed;
+  top: 120px;
+  right: 13px;
+  z-index: 100;
+  min-height: 440px;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+
+  &__link {
+    padding: 32px 16px;
+    font-size: 14px;
+    color: variables.$white;
+    letter-spacing: 1px;
+
+    &:first-child {
+      background-color: #3983c8;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+}
+
+.custom-logo-link {
+  max-width: 200px;
+  margin-left: 24px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include variables.mq(variables.$content-width-md) {
+  .l-header {
+    &__nav {
+      .menu {
+        font-size: 14px;
+      }
+
+      .menu-primary-container {
+        flex-grow: 1;
+      }
+
+      .menu-item {
+        margin: 0 2.4%;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .custom-logo-link {
+    width: 18%;
+  }
+}
+
+@include variables.mq(variables.$pc) {
+  .l-header {
+    &__nav {
+      &.-pc {
+        display: none;
+      }
+    }
+    .menu-primary-container {
+      display: none;
+    }
+
+    &__hammenu {
+      position: absolute;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 4px 0;
+      background-color: variables.$white;
+
+      &.home {
+        background-color: transparent;
+      }
+    }
+
+    &__trigger,
+    &__trigger span {
+      box-sizing: border-box;
+      display: inline-block;
+      transition: all variables.$transition-speed-normal;
+    }
+
+    &__trigger {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      margin-right: 4px;
+
+      span {
+        position: absolute;
+        left: 50%;
+        width: 26px;
+        height: 3px;
+        background-color: variables.$color-primary;
+
+        &:first-of-type {
+          transform: translate(-50%, 16px);
+        }
+
+        &:nth-of-type(2) {
+          top: 48%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:nth-of-type(3) {
+          transform: translate(-50%, 32px);
+        }
+      }
+
+      &.home {
+        span {
+          background-color: variables.$white;
+        }
+      }
+    }
+
+    &__trigger.active span:nth-of-type(1) {
+      -webkit-transform: translate(-12px, 26px) rotate(-45deg);
+      transform: translate(-12px, 26px) rotate(-45deg);
+    }
+    &__trigger.active span:nth-of-type(2) {
+      opacity: 0;
+    }
+    &__trigger.active span:nth-of-type(3) {
+      -webkit-transform: translate(-12px, 26px) rotate(-45deg);
+      transform: translate(-12px, 26px) rotate(45deg);
+    }
+
+    &.-fixed {
+      position: fixed;
+      z-index: 200;
+      width: 100%;
+      background-color: variables.$white;
+
+      .header__hammenu {
+        &.home {
+          background-color: variables.$white;
+        }
+      }
+
+      .l-header__trigger span {
+        background-color: variables.$color-primary;
+      }
+    }
+
+    .custom-logo-link {
+      width: 28%;
+    }
+
+    &__hammenuWrapper {
+      position: fixed;
+      top: 58px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100vh - 58px);
+    }
+
+    .menu-sp-menu-container {
+      margin-top: -42vw;
+
+      li {
+        text-align: center;
+        letter-spacing: 2px;
+
+        &:not(:first-child) {
+          margin-top: 10vw;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        color: variables.$color-primary;
+      }
+    }
+  }
+}

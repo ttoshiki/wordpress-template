@@ -1,0 +1,76 @@
+@use "variables";
+
+.c-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  padding: 0 24px 0 0px;
+  color: variables.$white;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    308deg,
+    rgb(0, 50, 112) 0%,
+    rgb(0, 69, 154) 49%,
+    rgb(0, 88, 195) 100%
+  );
+  border: none;
+  border-radius: 0;
+  transition: opacity variables.$transition-speed-normal;
+
+  &:hover {
+    cursor: pointer;
+    opacity: variables.$opacity-normal;
+  }
+
+  &.-secondary {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid variables.$white;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 300px;
+    font-size: 14px;
+    box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.05);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -40px;
+      width: 80px;
+      height: 2px;
+      content: "";
+      background: linear-gradient(
+        90deg,
+        variables.$white 0%,
+        variables.$white 50%,
+        variables.$color-primary 50%,
+        variables.$color-primary 100%
+      );
+      transition: all 0.2s;
+      transform: translateY(-50%);
+    }
+
+    &.-secondary {
+      &::after {
+        height: 1px;
+        background: variables.$white;
+      }
+    }
+
+    &.-center {
+      margin: 0 auto;
+    }
+
+    .ajax-loader {
+      position: absolute;
+      bottom: -36px;
+      left: 50%;
+      transform: translateX(-100%);
+    }
+  }
+}

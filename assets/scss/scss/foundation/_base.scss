@@ -1,15 +1,15 @@
 @use "variables";
 
 /*
-Theme Name: rino-matsushima
+Theme Name: matsukatsu
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
-Description: rino-matsushima original theme
+Description: matsukatsu original theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: rino-matsushima
+Text Domain: matsukatsu
 */
 
 *,
@@ -40,6 +40,11 @@ ol {
 
 a {
   text-decoration: none;
+  transition: opacity variables.$transition-speed-normal;
+
+  &:hover {
+    opacity: variables.$opacity-normal;
+  }
 }
 
 img {
@@ -63,17 +68,18 @@ textarea {
   appearance: none;
 }
 
-.roboto {
-  font-family: "Roboto", sans-serif;
-}
-
-.screen-reader-text {
-  display: none;
+.sr-only:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .site-main {
   width: 100%;
-  min-width: variables.$content-width-md;
   margin: 0 auto;
 }
 
@@ -88,10 +94,6 @@ textarea {
 
   .-sp {
     display: block;
-  }
-
-  .site-main {
-    min-width: auto;
   }
 
   select,

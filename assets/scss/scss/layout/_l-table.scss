@@ -1,0 +1,26 @@
+@use "variables";
+
+.l-table {
+  margin-top: 64px;
+
+  dl {
+    display: flex;
+    margin-bottom: 32px;
+    font-size: 15px;
+  }
+
+  dt {
+    width: 22.5%;
+    padding-bottom: 16px;
+    color: variables.$color-primary;
+    text-align: center;
+    border-bottom: 5px solid variables.$color-primary;
+  }
+
+  dd {
+    width: 77.5%;
+    padding: 0 16px 0 8%;
+    letter-spacing: 2px;
+    border-bottom: 1px solid variables.$color-primary;
+  }
+}
