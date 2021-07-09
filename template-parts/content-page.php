@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package rino_matsuhima
+ * @package wordpress_template
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php rino_matsuhima_post_thumbnail(); ?>
+	<?php wordpress_template_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -22,7 +22,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rino_matsuhima' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wordpress_template' ),
 				'after'  => '</div>',
 			)
 		);
@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'rino_matsuhima' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'wordpress_template' ),
 						array(
 							'span' => array(
 								'class' => array(),

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package rino_matsuhima
+ * @package wordpress_template
  */
 
 ?>

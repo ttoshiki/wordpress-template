@@ -82,16 +82,6 @@
   }
 }
 
-.custom-logo-link {
-  max-width: 200px;
-  margin-left: 24px;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
 @include variables.mq(variables.$content-width-md) {
   .l-header {
     &__nav {
@@ -108,10 +98,6 @@
         letter-spacing: 3px;
       }
     }
-  }
-
-  .custom-logo-link {
-    width: 18%;
   }
 }
 
@@ -209,10 +195,6 @@
       .l-header__trigger span {
         background-color: variables.$color-primary;
       }
-    }
-
-    .custom-logo-link {
-      width: 28%;
     }
 
     &__hammenuWrapper {

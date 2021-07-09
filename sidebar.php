@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package rino_matsuhima
+ * @package wordpress_template
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

@@ -1,15 +1,15 @@
 @use "variables";
 
 /*
-Theme Name: matsukatsu
+Theme Name: WordPress_template
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
-Description: matsukatsu original theme
+Description: WordPress_template original theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: matsukatsu
+Text Domain: WordPress_template
 */
 
 *,
@@ -76,11 +76,6 @@ textarea {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-.site-main {
-  width: 100%;
-  margin: 0 auto;
 }
 
 .-sp {

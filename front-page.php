@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package rino_matsuhima
+ * @package wordpres_template
  */
 
 get_header();
